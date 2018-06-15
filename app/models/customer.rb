@@ -33,9 +33,7 @@ class Customer
   end
 
   def add_review(restaurant, content)
-    new_review = Review.new(self, restaurant)
-    new_review.content = content
-    new_review
+    Review.new(self, restaurant, content)
   end
 
 end
