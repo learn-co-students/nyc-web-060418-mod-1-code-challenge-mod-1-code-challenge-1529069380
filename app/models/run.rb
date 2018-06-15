@@ -1,17 +1,11 @@
-require_relative '../config/environment.rb'
-require_relative '../app/models/customer.rb'
-
-def reload
-  load 'config/environment.rb'
-end
-
-
-
-
+require_relative './customer.rb'
+require_relative './restaurant.rb'
+require_relative './review.rb'
+require 'pry'
   #Make Customers
   ching = Customer.new("Ching", "Lim")
   chang = Customer.new("Changmin", "Lim")
-  chong = Customer.new("Chong", "Bang")
+  chong = Customer.new("Changmin", "Lim")
   mike2 = Customer.new("Mike", "Bang")
   mike = Customer.new('Mike', 'Lee')
   devin = Customer.new('Devin', 'Kim')
@@ -30,4 +24,4 @@ end
   mike_review = Review.new(mike, burgerking)
   devin_review = Review.new(devin, lobster)
 
-# Pry.start
+Pry.start

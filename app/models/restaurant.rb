@@ -1,8 +1,26 @@
 class Restaurant
   attr_accessor :name
+  @@all = []
 
   def initialize(name)
     @name = name
+    @@all << self 
   end
 
+  def self.all
+    @@all
+  end
+
+  def self.find_by_name(name)
+    Restaurant.all.find{|restaurant| restaurant.name == name}
+  end
+
+  def reviews
+    Review.all.select {|review| review.restaurant == self}
+  end
+
+  def customers
+    get_restaurant = Review.all.select{|review| review.restaurant == self}
+    self.get_restaurant.collect {|review| review.customer}
+  end
 end
