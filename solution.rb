@@ -17,7 +17,7 @@ class Review
 
 end
 
-#############
+##################################
 
 class Restaurant
   attr_accessor :name
@@ -60,7 +60,7 @@ class Restaurant
 
 end
 
-##################
+##################################
 
 class Customer
 
