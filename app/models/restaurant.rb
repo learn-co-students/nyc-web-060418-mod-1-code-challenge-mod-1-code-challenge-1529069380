@@ -26,7 +26,7 @@ class Restaurant
   def customers
     self.reviews.map do |review|
       review.customer
-    end
+    end.uniq
   end
 
 end
