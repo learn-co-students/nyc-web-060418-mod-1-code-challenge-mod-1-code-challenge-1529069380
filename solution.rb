@@ -89,7 +89,8 @@ end
 
 class Review
 
-  attr_reader :customer, :restaurant, :review
+  attr_reader :customer, :restaurant
+  attr_accessor :review
   @@all = []
 
   def self.all
@@ -106,5 +107,5 @@ class Review
   def text
     self.review
   end
-  
+
 end
