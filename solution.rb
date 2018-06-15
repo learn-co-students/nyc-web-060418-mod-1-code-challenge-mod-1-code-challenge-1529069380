@@ -17,7 +17,7 @@ class Review
     # * returns the customer object for that given review
     Customer.all.select{|cu| cu.first_name == self.first_name}
   end
-  def restaurant
+  def restaurant_rev
     # * returns the restaurant object for that given review
     Restaurant.all.select{|cu|puts cu}
   end

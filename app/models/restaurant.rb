@@ -18,19 +18,18 @@ class Restaurant
   end
   def reviews
     # * returns an array of all reviews for that restaurant
-    arr = []
-    Review.all.each do|rev|
-      if rev.restaurant == self
-        arr << rev.review
-      end
-      # binding.pry
-    end
-    arr
+    Review.all.select{|rev|
+      rev.restaurant == self}.map{|re|re.review}
   end
 
   def customers
     # * returns all of customers who have written reviews of that restaurant. A `Restaurant` has many `Customers` and a `Customer` has   many `Restaurants`
-    # Customer.all.
+    Review.all.select do|rev|
+      rev.restaurant == self
+    end.map do |re|
+      re.user
+      # binding.pry
+    end
   end
 
 end
