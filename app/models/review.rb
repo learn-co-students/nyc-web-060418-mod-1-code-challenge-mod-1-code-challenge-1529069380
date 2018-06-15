@@ -1,6 +1,6 @@
 class Review
 
-  attr_reader :customer, :restaurant
+  attr_reader :customer, :restaurant, :review
   @@all = []
 
   def self.all
@@ -12,6 +12,10 @@ class Review
     @customer = customer
     @review = review
     self.class.all << self
+  end
+
+  def text
+    self.review
   end
 
 
