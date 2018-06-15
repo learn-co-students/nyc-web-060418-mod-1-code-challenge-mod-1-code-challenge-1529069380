@@ -68,7 +68,7 @@ end
 class Review
   @@all = []
 
-  attr_accessor :name, :restaurant :customer
+  attr_accessor :name, :restaurant, :customer
 
   def initialize(name, restaurant, customer)
     @name = name
