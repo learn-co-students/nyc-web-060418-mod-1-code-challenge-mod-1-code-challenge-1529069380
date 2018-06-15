@@ -1,11 +1,11 @@
 class Review
 
   @@all = []
-  attr_accessor :review, :user, :restaurant
+  attr_accessor :review, :customer, :restaurant
 
-  def initialize(review, user, restaurant)
+  def initialize(review, customer, restaurant)
     @review = review
-    @user = user
+    @customer = customer
     @restaurant = restaurant
     self.class.all << self
   end
