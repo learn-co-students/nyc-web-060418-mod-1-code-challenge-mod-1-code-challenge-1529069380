@@ -70,21 +70,34 @@ class Customer
     Review.new(self, restaurant, content)
   end
 
-# class methods
+  # i figured i'd add this #reviews method because a customer
+  # should know about their reviews
 
+  def reviews
+    Review.all.select {|review| review.customer == self}
+  end
+
+# class methods
+# sanitized arguments against capitalization errors
   def self.all
     @@all_customers
   end
 
   def self.find_by_name(name)
-    all.find {|customer| customer.full_name.downcase == name.downcase}
+    all.find {|customer| customer.full_name == name.downcase}
   end
 
   def self.find_all_by_first_name(name)
-    all.select {|customer| customer.first_name.downcase == name.downcase}
+    all.select {|customer| customer.first_name == name.downcase}
   end
 
   def self.all_names
     all.collect {|customer| customer.full_name}
   end
+
+  # how can i sanitize against punctuation and spacing errors
+  # this should work but i wasn't able to incorporate and debug it in time
+  # def sanitize
+  #   self.gsub!(/[\s|'|-]/)
+  # end
 end
