@@ -51,10 +51,4 @@ class Customer
     end.uniq
   end
 
-
-
-
-
-
-
 end
